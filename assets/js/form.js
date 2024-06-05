@@ -2,21 +2,28 @@
 const usernameInput = document.querySelector('#username');
 const titleInput = document.querySelector('#title'); 
 const contentInput = document.querySelector('#content'); 
+const msgDiv = document.querySelector('#msg');
 const submitButton = document.querySelector('.submit'); 
 
-// DATA
+// DATA 
 
 // FUNCTIONS
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute('class', type);
+}
+
 function handleFormSubmit (event) {
     event.preventDefault();
-
-    const username = usernameInput.value;
-    const title = titleInput.value;
-    const content = contentInput.value; 
 
     usernameInput.textContent = " ";
     titleInput.textContent = " ";
     contentInput.textContent = " "; 
+
+    const username =  usernameInput.value;
+    const title = titleInput.value;
+    const content = contentInput.value; 
+
 
     if (username === '') {
         displayMessage('error', 'Please enter username');
@@ -25,11 +32,15 @@ function handleFormSubmit (event) {
       } else if (content === '') {
           displayMessage('error', 'Please enter your post content');
       } else {
-          window.location.href = "http://www.w3schools.com";
-  
-          localStorage.setItem('username', username);
-          localStorage.setItem('title', title);
-          localStorage.setItem('content', content);
+          window.location.href = "blog.html";
+
+          const post = {
+            username: usernameInput.value.trim(),
+            title: titleInput.value.trim(),
+            content: contentInput.value.trim(),
+          };
+
+          localStorage.setItem('post', JSON.stringify(post));
          
       }
     
