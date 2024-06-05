@@ -1,0 +1,24 @@
+form {
+    max-width: 100%;
+  }
+  
+  form h2 {
+    font-size: 150%;
+  }
+  
+  form p {
+    margin: 3% 0;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  button {
+    padding: 1% 2%;
+    color: #fff;
+    background-color: #13293d;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
