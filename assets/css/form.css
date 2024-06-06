@@ -38,6 +38,7 @@ input {
     border-width: 1px;
     color: #5f6368;
     font-size: 1.1em;
+    text-align: start;
     height: 200px;
     line-height: 20px;
     margin: 0;
