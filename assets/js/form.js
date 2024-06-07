@@ -34,13 +34,13 @@ function handleFormSubmit (event) {
       } else {
           window.location.href = "blog.html";
 
-          const post = {
+          const posts = {
             username: usernameInput.value.trim(),
             title: titleInput.value.trim(),
             content: contentInput.value.trim(),
           };
 
-          localStorage.setItem('post', JSON.stringify(post));
+          localStorage.setItem('posts', JSON.stringify(posts));
          
       }
     
