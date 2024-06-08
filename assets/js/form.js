@@ -34,13 +34,20 @@ function handleFormSubmit (event) {
       } else {
           window.location.href = "blog.html";
 
+          // get the existing list of posts
+
+          // build the new post object
           const post = {
             username: usernameInput.value.trim(),
             title: titleInput.value.trim(),
             content: contentInput.value.trim(),
           };
 
-          localStorage.setItem('post', JSON.stringify(post));
+          // add the new post to the list of posts
+          let posts = [];
+          posts.push(post); 
+          // save the whole thing to local storage
+          localStorage.setItem('posts', JSON.stringify(posts));
          
       }
     

@@ -1,67 +1,80 @@
 // DEPENDENCIES
-const themeButtonEl = document.getElementById('theme-btn');
-const bodyEl = document.getElementById('body'); 
-const backButtonEl = document.getElementById('back'); 
-const blogPostDisplayEl = document.getElementById('blog-post-display'); 
+const themeButtonEl = $('#theme-btn');
+const bodyEl = $('#body');
+const backButtonEl = $('#back');
+const blogPostDisplayEl = $('#blog-post-display');
 
-let post = localStorage.getItem('post');
-console.log(post); 
-
-const blogPost = JSON.parse(localStorage.getItem('post'));
-console.log(blogPost); 
 
 // FUNCTIONS 
-const createCards = function (title, content, username) {
+function readPostsFromStorage() {
 
-    const cardColumnEl = document.createElement('div');
-    cardColumnEl.setAttribute('style', 'margin:auto; width:50%; text-align:center;'); 
-  
-    const cardEl = document.createElement('div');
-    cardEl.setAttribute('style', 'margin:auto; width:50%; text-align:center;');
-    // cardEl.setAttribute('id', 'custom-card');
-    cardColumnEl.appendChild(cardEl);
-  
-    const cardTitle = document.createElement('h3');
-    // cardTitle.setAttribute('id', 'title');
-    cardTitle.textContent = title;
-    cardEl.appendChild(cardTitle);
-  
-    const cardContentEl = document.createElement('p');
-    // cardContentEl.setAttribute('id', 'content');
-    cardContentEl.textContent = content; 
-    cardEl.appendChild(cardContentEl);
+    let posts = JSON.parse(localStorage.getItem('posts'));
 
-    const cardAuthorEl = document.createElement('p');
-    // cardAuthorEl.setAttribute('id', 'author');
-    cardAuthorEl.textContent = `Posted by ${username}.`; 
-    cardEl.appendChild(cardAuthorEl); 
-    
-    blogPostDisplayEl.appendChild(cardColumnEl);
+    if (!posts) {
+        posts = [];
+    }
+    console.log(posts); 
+    return posts;
 };
 
-// const getData = function() {
+function createBlogCard(posts) {
 
-//     if (blogPost !== null) {
-//         document.children('h3').innerHTML = blogPost.title;
-//         document.children('p').innerHTML = blogPost.content;
-//         document.getElementById('author').innerHTML = blogPost.username;
-//     }
-// };
-  
+    const blogCard = $('<div>')
+        .addClass('card post-card my-3')
+    const cardHeader = $('<h3>').addClass('card-header h3').text(posts.title);
+    const cardBody = $('<div>').addClass('card-body');
+    const cardContent = $('<p>').addClass('card-content').text(posts.content);
+    const cardAuthor = $('<p>').addClass('card-author').text(`Posted by: ${posts.username}`); 
+
+    cardBody.append(cardHeader, cardContent, cardAuthor);
+    blogCard.append(cardBody); 
+
+    return blogCard; 
+
+}; 
+
+function renderPostData() {
+    const posts = readPostsFromStorage(); 
+    console.log(posts);
+    for (let post of posts) {
+        blogPostDisplayEl.append(createBlogCard(post));
+    }
+
+}; 
+
+// function handleSubmit(event) {
+//     event.preventDefault();
+
+//     const newPost = {
+//         title: postTitle,
+//         content: postContent,
+//         username: postAuthor,
+//     };
+
+//     const posts = readPostsFromStorage();
+//     posts.push(newPost);
+
+//     renderPostData();
+// }; 
+
+// function changeTheme() {
+
+// }
 
 // USER INTERACTIONS 
-themeButtonEl.addEventListener('click', function() {
-    let isDark =  true; 
+// themeButtonEl.addEventListener('click', function() {
+//     let isDark =  true; 
 
-    if (isDark) {
-        bodyEl.setAttribute('style', 'background-color:#d9e9e8; color:#1a1a1a');
-        isDark = !isDark;
-      } else {
-        bodyEl.setAttribute('style', 'background-color:#1a1a1a; color:#d9e9e8');
-        isDark = !isDark;
-      }
+//     if (isDark) {
+//         bodyEl.setAttribute('style', 'background-color:#d9e9e8; color:#1a1a1a');
+//         isDark = !isDark;
+//       } else {
+//         bodyEl.setAttribute('style', 'background-color:#1a1a1a; color:#d9e9e8');
+//         isDark = !isDark;
+//       }
+// }); 
+
+$(document).ready( function () {
+    renderPostData();
 }); 
 
-backButtonEl.addEventListener('click', function() {
-    window.location.href = "index.html";
-});
