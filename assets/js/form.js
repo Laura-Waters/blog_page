@@ -48,6 +48,11 @@ function handleFormSubmit (event) {
           posts.push(post); 
           // save the whole thing to local storage
           localStorage.setItem('posts', JSON.stringify(posts));
+
+          //reset the form 
+          usernameInput.value = " ";
+          titleInput.value = " ";
+          contentInput.value = " ";
          
       }
     
@@ -56,5 +61,3 @@ function handleFormSubmit (event) {
 // USER INTERACTIONS  
 submitButton.addEventListener('click', handleFormSubmit);
   
-
-// INITIALIZATION 

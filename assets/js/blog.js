@@ -42,38 +42,28 @@ function renderPostData() {
 
 }; 
 
-// function handleSubmit(event) {
-//     event.preventDefault();
+let isDark = true; 
+themeButtonEl.on('click', function () {
 
-//     const newPost = {
-//         title: postTitle,
-//         content: postContent,
-//         username: postAuthor,
-//     };
+    if (isDark) { 
+        $('body').css({ 'background-color' : 'darkblue', 'color' : 'white' });
+        $('header').css({ 'background-color' : 'blue', 'color' : 'white' });
+        $('footer').css({ 'background-color' : 'blue', 'color' : 'white' });
+        $('.card-header').css({ 'background-color' : 'blue', 'color' : 'white' });
+        $('.btn').css({ 'background-color' : 'darkblue', 'color' : 'white' });
+        isDark = !isDark;
+    } else {
+        $('body').css({ 'background-color' : 'white', 'color' : 'black' });
+        $('header').css({ 'background-color' : 'bisque', 'color' : 'black' });
+        $('footer').css({ 'background-color' : 'bisque', 'color' : 'black' });
+        $('.card-header').css({ 'background-color' : 'antiquewhite', 'color' : 'black' });
+        $('.btn').css({ 'background-color' : '#d67c5e', 'color' : 'white' });
+        isDark = !isDark;
+    }; 
 
-//     const posts = readPostsFromStorage();
-//     posts.push(newPost);
-
-//     renderPostData();
-// }; 
-
-// function changeTheme() {
-
-// }
+}); 
 
 // USER INTERACTIONS 
-// themeButtonEl.addEventListener('click', function() {
-//     let isDark =  true; 
-
-//     if (isDark) {
-//         bodyEl.setAttribute('style', 'background-color:#d9e9e8; color:#1a1a1a');
-//         isDark = !isDark;
-//       } else {
-//         bodyEl.setAttribute('style', 'background-color:#1a1a1a; color:#d9e9e8');
-//         isDark = !isDark;
-//       }
-// }); 
-
 $(document).ready( function () {
     renderPostData();
 }); 
