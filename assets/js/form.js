@@ -25,7 +25,6 @@ function handleFormSubmit (event) {
   const title = titleInput.value;
   const content = contentInput.value; 
 
-
   if (username === '') {
       displayMessage('error', 'Please enter username');
     } else if (title === '') {
@@ -56,11 +55,10 @@ function handleFormSubmit (event) {
         titleInput.value = " ";
         contentInput.value = " "; 
 
-        renderPostData(post);
        
-    }
+    };
   
-}
+};
 
 // USER INTERACTIONS  
 submitButton.addEventListener('click', handleFormSubmit);

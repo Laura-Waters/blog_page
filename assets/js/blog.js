@@ -31,4 +31,3 @@ themeButtonEl.on('click', function () {
 $(document).ready( function () {
     renderPostData();
 }); 
-
