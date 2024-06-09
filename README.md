@@ -1,5 +1,5 @@
 # Personal Blog
-[https://laura-waters.github.io/module2_challenge/](https://github.com/Laura-Waters/module4_challenge)
+https://github.com/Laura-Waters/module4_challenge
 
 ## Description
 
