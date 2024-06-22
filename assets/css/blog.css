@@ -1,6 +1,7 @@
 body {
     background-color: white;
-}
+    margin: 0;
+} 
 
 
 header {
@@ -100,7 +101,7 @@ footer {
     height: 80px; 
     margin-top: 40px;
     width: 100%;
-    position: absolute; 
+    position: fixed; 
     bottom: 0;
     border-top: 2px solid black;
 }
