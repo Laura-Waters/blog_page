@@ -31,3 +31,7 @@ themeButtonEl.on('click', function () {
 $(document).ready( function () {
     renderPostData();
 }); 
+
+backButtonEl.on("click", () => {
+    history.back();
+  });

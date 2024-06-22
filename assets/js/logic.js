@@ -10,7 +10,6 @@ function readPostsFromStorage() {
 };
 
 function createBlogCard(post) {
-
     const blogCard = $('<div>')
         .addClass('card post-card my-3')
     const cardHeader = $('<h3>').addClass('card-header h3').text(post.title);

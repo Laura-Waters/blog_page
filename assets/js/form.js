@@ -8,18 +8,16 @@ const submitButton = document.querySelector('.submit');
 // DATA 
 
 // FUNCTIONS
+
+let posts = []; 
+
 function displayMessage(type, message) {
   msgDiv.textContent = message;
   msgDiv.setAttribute('class', type);
 } 
 
-
 function handleFormSubmit (event) {
   event.preventDefault();
-
-  usernameInput.textContent = " ";
-  titleInput.textContent = " ";
-  contentInput.textContent = " "; 
 
   const username =  usernameInput.value;
   const title = titleInput.value;
@@ -32,33 +30,34 @@ function handleFormSubmit (event) {
     } else if (content === '') {
         displayMessage('error', 'Please enter your post content');
     } else {
-        window.location.href = "blog.html";
+      const post = {
+        username: username,
+        title: title,
+        content: content
+      };
 
-        // get the existing list of posts
-        let posts = [];
+      let posts = JSON.parse(localStorage.getItem('posts')) || []; 
 
-        // build the new post object
-        const post = {
-          username: usernameInput.value.trim(),
-          title: titleInput.value.trim(),
-          content: contentInput.value.trim(),
-        }; 
 
-        // add the new post to the list of posts
-        posts.push(post); 
+      // add the new post to the list of posts
+      posts.push(post); 
 
-        // save the whole thing to local storage
-        localStorage.setItem('posts', JSON.stringify(posts));
+      // save the whole thing to local storage
+      localStorage.setItem('posts', JSON.stringify(posts));
 
-        //reset the form 
-        usernameInput.value = " ";
-        titleInput.value = " ";
-        contentInput.value = " "; 
+      //reset the form 
+      usernameInput.value = " ";
+      titleInput.value = " ";
+      contentInput.value = " "; 
 
-       
-    };
+      window.location.href = "blog.html";
+
+      return posts; 
   
-};
+}};
+
 
 // USER INTERACTIONS  
-submitButton.addEventListener('click', handleFormSubmit);
+submitButton.addEventListener('click', handleFormSubmit); 
+
+
