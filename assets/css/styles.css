@@ -3,32 +3,35 @@ body {
     min-height: 100vh;
   }
   
-  h1 {
-    font-size: 300%;
-    padding: 20px;
-    margin: 2% 0;
-    color: #ffffff;
-  }
+h1 {
+  font-size: 300%;
+  padding: 20px;
+  margin: 2% 0;
+}
   
-  h2 {
-    margin: 2% 0;
-    font-size: 250%;
-  }
+h2 {
+  margin: 2% 0;
+  font-size: 250%;
+}
 
-  main {
-    display: flex;
-    flex-direction: column; 
-    flex-direction: row; 
-    justify-content: space-evenly;
-    align-items: center;
-    max-width: 100%;
-    position: relative;
-  }
+main {
+  display: flex;
+  flex-direction: column; 
+  flex-direction: row; 
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+  position: relative;
+}
 
-  .circle {
-    height: 400px;
-    width: 400px;
-    background-image: linear-gradient(red, yellow);
-    border-radius: 50%;
-    margin: 40px; 
-  }
+.circle {
+  height: 400px;
+  width: 400px;
+  background-image: linear-gradient(red, bisque);
+  border-radius: 50%;
+  margin: 40px; 
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
