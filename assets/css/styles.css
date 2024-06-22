@@ -7,6 +7,7 @@ body {
     font-size: 300%;
     padding: 20px;
     margin: 2% 0;
+    color: #ffffff;
   }
   
   h2 {
@@ -16,9 +17,18 @@ body {
 
   main {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: column; 
+    flex-direction: row; 
+    justify-content: space-evenly;
     align-items: center;
     max-width: 100%;
     position: relative;
+  }
+
+  .circle {
+    height: 400px;
+    width: 400px;
+    background-image: linear-gradient(red, yellow);
+    border-radius: 50%;
+    margin: 40px; 
   }
