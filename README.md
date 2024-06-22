@@ -1,5 +1,5 @@
 # Personal Blog
-https://github.com/Laura-Waters/module4_challenge
+https://github.com/Laura-Waters/personal_blog
 
 ## Description
 
@@ -23,10 +23,11 @@ Please refer to the LICENSE in the repo.
 
 ## Deployed Webpage
 
-https://laura-waters.github.io/module4_challenge/
+https://laura-waters.github.io/personal_blog/
 
-![formpage](https://github.com/Laura-Waters/module4_challenge/assets/168473293/bf93cc56-886b-46b8-ab4e-068b41eec915)
-![blogpage_1](https://github.com/Laura-Waters/module4_challenge/assets/168473293/03dcdef6-5eb5-441e-866c-241f70b60b2f) 
-![blogpage_2](https://github.com/Laura-Waters/module4_challenge/assets/168473293/5911c646-247a-4e76-8c78-9e2c768c5390)
+<img width="1262" alt="formpage" src="https://github.com/Laura-Waters/personal_blog/assets/168473293/6cc6a868-8a02-4810-b421-22465d7eca37">
+<img width="1263" alt="blogpage1" src="https://github.com/Laura-Waters/personal_blog/assets/168473293/01239a49-1747-4777-964f-3127bf87a48e">
+<img width="1260" alt="blogpage2" src="https://github.com/Laura-Waters/personal_blog/assets/168473293/4d707e03-c6d0-45c2-9da6-2b6b3f425bcb">
+
 
 
